@@ -1,0 +1,296 @@
+<tryton>
+    <data>
+        <record model="monitoring.check.type" id="check_cpu_times_percent">
+            <field name="name">CPU Times Percent</field>
+            <field name="internal_name">check_cpu_times_percent</field>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent_guest">
+            <field name="name">CPU Percent Guest</field>
+            <field name="internal_name">cpu_percent_guest</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent_idle">
+            <field name="name">CPU Percent Idle</field>
+            <field name="internal_name">cpu_percent_idle</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent_iowait">
+            <field name="name">CPU Percent IO Wait</field>
+            <field name="internal_name">cpu_percent_iowait</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent_irq">
+            <field name="name">CPU Percent IRQ</field>
+            <field name="internal_name">cpu_percent_irq</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent_nice">
+            <field name="name">CPU Percent Nice</field>
+            <field name="internal_name">cpu_percent_nice</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent_softirq">
+            <field name="name">CPU Percent Soft IRQ</field>
+            <field name="internal_name">cpu_percent_softirq</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent_steal">
+            <field name="name">CPU Percent Steal</field>
+            <field name="internal_name">cpu_percent_steal</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent_system">
+            <field name="name">CPU Percent System</field>
+            <field name="internal_name">cpu_percent_system</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent_user">
+            <field name="name">CPU Percent User</field>
+            <field name="internal_name">cpu_percent_user</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_cpu_percent">
+            <field name="name">CPU Percent</field>
+            <field name="internal_name">check_cpu_percent</field>
+        </record>
+        <record model="monitoring.result.type" id="result_cpu_percent">
+            <field name="name">CPU Percent</field>
+            <field name="internal_name">cpu_percent</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_disk">
+            <field name="name">Disk</field>
+            <field name="internal_name">check_disk</field>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_free">
+            <field name="name">Disk Free</field>
+            <field name="internal_name">disk_free</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_percent">
+            <field name="name">Disk Percent</field>
+            <field name="internal_name">disk_percent</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_total">
+            <field name="name">Disk Total</field>
+            <field name="internal_name">disk_total</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_used">
+            <field name="name">Disk Used</field>
+            <field name="internal_name">disk_used</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_disk_io_counters">
+            <field name="name">Disk IO Counters</field>
+            <field name="internal_name">check_disk_io_counters</field>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_io_counter_read_count">
+            <field name="name">Disk IO Read Count</field>
+            <field name="internal_name">disk_io_counter_read_count</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_io_counter_write_count">
+            <field name="name">Disk IO Write Count</field>
+            <field name="internal_name">disk_io_counter_write_count</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_io_counter_read_bytes">
+            <field name="name">Disk IO Read Bytes</field>
+            <field name="internal_name">disk_io_counter_read_bytes</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_io_counter_write_bytes">
+            <field name="name">Disk IO Write Bytes</field>
+            <field name="internal_name">disk_io_counter_write_bytes</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_io_counter_read_time">
+            <field name="name">Disk IO Read Time</field>
+            <field name="internal_name">disk_io_counter_read_time</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_millisecond"/>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_io_counter_write_time">
+            <field name="name">Disk IO Write Time</field>
+            <field name="internal_name">disk_io_counter_write_time</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_millisecond"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_swap">
+            <field name="name">SWAP</field>
+            <field name="internal_name">check_swap</field>
+        </record>
+        <record model="monitoring.result.type" id="result_swap_usage_free">
+            <field name="name">SWAP Usage Free</field>
+            <field name="internal_name">swap_usage_free</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_swap_usage_percent">
+            <field name="name">SWAP Usage Percent</field>
+            <field name="internal_name">swap_usage_percent</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_percent"/>
+        </record>
+        <record model="monitoring.result.type" id="result_swap_usage_sin">
+            <field name="name">SWAP In</field>
+            <field name="internal_name">swap_usage_sin</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_swap_usage_sout">
+            <field name="name">SWAP Out</field>
+            <field name="internal_name">swap_usage_sout</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_swap_usage_total">
+            <field name="name">SWAP Usage Total</field>
+            <field name="internal_name">swap_usage_total</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_swap_usage_used">
+            <field name="name">SWAP Used</field>
+            <field name="internal_name">swap_usage_used</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_physical_memory">
+            <field name="name">Physical Memory</field>
+            <field name="internal_name">check_physical_memory</field>
+        </record>
+        <record model="monitoring.result.type" id="result_physical_memory_usage_active">
+            <field name="name">Physical Memory Active</field>
+            <field name="internal_name">physical_memory_usage_active</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_physical_memory_usage_available">
+            <field name="name">Physical Memory Available</field>
+            <field name="internal_name">physical_memory_usage_available</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_physical_memory_usage_buffers">
+            <field name="name">Physical Memory Buffers</field>
+            <field name="internal_name">physical_memory_usage_buffers</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_physical_memory_usage_cached">
+            <field name="name">Physical Memory Cached</field>
+            <field name="internal_name">physical_memory_usage_cached</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_physical_memory_usage_free">
+            <field name="name">Physical Memory Free</field>
+            <field name="internal_name">physical_memory_usage_free</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_physical_memory_usage_inactive">
+            <field name="name">Physical Memory Inactive</field>
+            <field name="internal_name">physical_memory_usage_inactive</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_physical_memory_usage_percent">
+            <field name="name">Physical Memory Percent</field>
+            <field name="internal_name">physical_memory_usage_percent</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_physical_memory_usage_total">
+            <field name="name">Physical Memory Total</field>
+            <field name="internal_name">physical_memory_usage_total</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_physical_memory_usage_used">
+            <field name="name">Physical Memory Used</field>
+            <field name="internal_name">physical_memory_usage_used</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_net_io_counters">
+            <field name="name">Net IO Counters</field>
+            <field name="internal_name">check_net_io_counters</field>
+        </record>
+        <record model="monitoring.result.type" id="result_net_io_counter_bytes_recv">
+            <field name="name">Net IO Bytes Received</field>
+            <field name="internal_name">net_io_counter_bytes_recv</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_net_io_counter_bytes_sent">
+            <field name="name">Net IO Bytes Sent</field>
+            <field name="internal_name">net_io_counter_bytes_sent</field>
+            <field name="type">float</field>
+            <field name="uom" ref="network_monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_net_io_counter_dropin">
+            <field name="name">Net IO In Packets Dropped</field>
+            <field name="internal_name">net_io_counter_dropin</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_net_io_counter_dropout">
+            <field name="name">Net IO Out Packets Dropped</field>
+            <field name="internal_name">net_io_counter_dropout</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_net_io_counter_errin">
+            <field name="name">Net IO In Errors</field>
+            <field name="internal_name">net_io_counter_errin</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_net_io_counter_errout">
+            <field name="name">Net IO Out Errors</field>
+            <field name="internal_name">net_io_counter_errout</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_net_io_counter_packets_recv">
+            <field name="name">Net IO Packets Received</field>
+            <field name="internal_name">net_io_counter_packets_recv</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_net_io_counter_packets_sent">
+            <field name="name">Net IO Packets Sent</field>
+            <field name="internal_name">net_io_counter_packets_sent</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+    </data>
+</tryton>
