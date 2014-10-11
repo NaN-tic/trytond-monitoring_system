@@ -23,10 +23,10 @@ class CheckPlan:
 
     def check_cpu_percent(self):
         usage = psutil.cpu_percent(interval=1)
-        return {
-            'result': 'cpu_percent',
-            'float_value': usage,
-            }
+        return [{
+                'result': 'cpu_percent',
+                'float_value': usage,
+                }]
 
     def check_disk(self):
         path = self.asset.get_attribute('path')
