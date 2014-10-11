@@ -74,27 +74,27 @@
             <field name="name">Disk</field>
             <field name="internal_name">check_disk</field>
         </record>
-        <record model="monitoring.result.type" id="result_disk_free">
+        <record model="monitoring.result.type" id="result_disk_usage_free">
             <field name="name">Disk Free</field>
-            <field name="internal_name">disk_free</field>
+            <field name="internal_name">disk_usage_free</field>
             <field name="type">float</field>
             <field name="uom" ref="network_monitoring.uom_byte"/>
         </record>
-        <record model="monitoring.result.type" id="result_disk_percent">
+        <record model="monitoring.result.type" id="result_disk_usage_percent">
             <field name="name">Disk Percent</field>
-            <field name="internal_name">disk_percent</field>
+            <field name="internal_name">disk_usage_percent</field>
             <field name="type">float</field>
             <field name="uom" ref="network_monitoring.uom_percent"/>
         </record>
-        <record model="monitoring.result.type" id="result_disk_total">
+        <record model="monitoring.result.type" id="result_disk_usage_total">
             <field name="name">Disk Total</field>
-            <field name="internal_name">disk_total</field>
+            <field name="internal_name">disk_usage_total</field>
             <field name="type">float</field>
             <field name="uom" ref="network_monitoring.uom_byte"/>
         </record>
-        <record model="monitoring.result.type" id="result_disk_used">
+        <record model="monitoring.result.type" id="result_disk_usage_used">
             <field name="name">Disk Used</field>
-            <field name="internal_name">disk_used</field>
+            <field name="internal_name">disk_usage_used</field>
             <field name="type">float</field>
             <field name="uom" ref="network_monitoring.uom_byte"/>
         </record>
