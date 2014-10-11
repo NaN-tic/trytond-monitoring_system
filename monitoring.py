@@ -13,8 +13,8 @@ class CheckPlan:
     def check_cpu_times_percent(self):
         usage = psutil.cpu_times_percent(interval=1)
         res = []
-        for name in ('user', 'nice', 'system', 'idle', 'iowait', 'irq',
-                'softirq', 'steal', 'guest', 'nice'):
+        for name in ('guest', 'idle', 'iowait', 'irq', 'nice', 'softirq',
+                'steal', 'system', 'user'):
             res.append({
                     'result': 'cpu_percent_%s' % name,
                     'float_value': getattr(usage, name),
@@ -32,7 +32,7 @@ class CheckPlan:
         path = self.asset.get_attribute('path')
         usage = psutil.disk_usage(path)
         res = []
-        for name in ('total', 'used', 'free', 'percent'):
+        for name in ('free', 'percent', 'total', 'used'):
             res.append({
                     'result': 'disk_usage_%s' % name,
                     'float_value': getattr(usage, name),
@@ -53,7 +53,7 @@ class CheckPlan:
     def check_swap(self):
         usage = psutil.swap_memory()
         res = []
-        for name in ('total', 'used', 'free', 'percent', 'sin', 'sout'):
+        for name in ('free', 'percent', 'sin', 'sout', 'total', 'used'):
             res.append({
                     'result': 'swap_usage_%s' % name,
                     'float_value': getattr(usage, name),
@@ -63,8 +63,8 @@ class CheckPlan:
     def check_physical_memory(self):
         usage = psutil.phymem_usage()
         res = []
-        for name in ('total', 'available', 'percent', 'used', 'free', 'active',
-                'inactive', 'buffers', 'cached'):
+        for name in ('active', 'available', 'buffers', 'cached', 'free',
+                'inactive', 'percent', 'total', 'used'):
             res.append({
                     'result': 'physical_memory_usage_%s' % name,
                     'float_value': getattr(usage, name),
@@ -78,8 +78,8 @@ class CheckPlan:
         if interface:
             usage = usage[interface]
         res = []
-        for name in ('bytes_sent', 'bytes_recv', 'packets_sent', 'packets_recv',
-                'errin', 'errout', 'dropin', 'dropout'):
+        for name in ('bytes_recv', 'bytes_sent', 'dropin', 'dropout', 'errin',
+                'errout', 'packets_recv', 'packets_sent'):
             res.append({
                     'result': 'net_io_counter_%s' % name,
                     'float_value': getattr(usage, name),
