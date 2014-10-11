@@ -61,7 +61,7 @@ class CheckPlan:
         return res
 
     def check_physical_memory(self):
-        usage = psutil.phymem_usage()
+        usage = psutil.virtual_memory()
         res = []
         for name in ('active', 'available', 'buffers', 'cached', 'free',
                 'inactive', 'percent', 'total', 'used'):
