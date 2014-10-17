@@ -10,7 +10,7 @@ class TestCase(unittest.TestCase):
     'Test module'
 
     def setUp(self):
-        trytond.tests.test_tryton.install_module('network_monitoring_system')
+        trytond.tests.test_tryton.install_module('monitoring_system')
 
     def test0006depends(self):
         'Test depends'
