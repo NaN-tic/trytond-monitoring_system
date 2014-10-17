@@ -6,4 +6,4 @@ from .monitoring import *
 def register():
     Pool.register(
         CheckPlan,
-        module='network_monitoring_system', type_='model')
+        module='monitoring_system', type_='model')

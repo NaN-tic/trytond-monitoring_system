@@ -6,7 +6,7 @@ import re
 import os
 import ConfigParser
 
-MODULE = 'network_monitoring_system'
+MODULE = 'monitoring_system'
 PREFIX = 'nantic'
 MODULE2PREFIX = {}
 
