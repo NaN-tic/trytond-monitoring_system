@@ -29,7 +29,7 @@ class CheckPlan:
                 }]
 
     def check_disk(self):
-        path = self.asset.get_attribute('path')
+        path = self.get_attribute('path')
         usage = psutil.disk_usage(path)
         res = []
         for name in ('free', 'percent', 'total', 'used'):
@@ -72,7 +72,7 @@ class CheckPlan:
         return res
 
     def check_net_io_counters(self):
-        interface = self.asset.get_attribute('interface')
+        interface = self.get_attribute('interface')
         pernic = bool(interface)
         usage = psutil.net_io_counters(pernic=pernic)
         if interface:
