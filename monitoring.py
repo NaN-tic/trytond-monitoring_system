@@ -85,3 +85,85 @@ class CheckPlan:
                     'float_value': getattr(usage, name),
                     })
         return res
+
+    def check_process_cpu_percent(self):
+        processes = self.get_attribute('processes')
+        if processes:
+            processes = processes.split(',')
+        res = []
+        for process in psutil.process_iter():
+            try:
+                name = process.name()
+                if processes and name not in processes:
+                    continue
+                cpu = process.cpu_percent()
+            except psutil.NoSuchProcess:
+                continue
+            res.append({
+                    'result': 'process_cpu_percent',
+                    'label': name,
+                    'float_value': cpu,
+                    })
+        return res
+
+    def check_process_open_files_count(self):
+        processes = self.get_attribute('processes')
+        if processes:
+            processes = processes.split(',')
+        res = []
+        for process in psutil.process_iter():
+            try:
+                name = process.name()
+                if processes and name not in processes:
+                    continue
+                files = process.num_fds()
+            except psutil.NoSuchProcess:
+                continue
+            res.append({
+                    'result': 'process_open_files_count',
+                    'label': name,
+                    'float_value': files,
+                    })
+        return res
+
+    def check_process_memory_percent(self):
+        processes = self.get_attribute('processes')
+        if processes:
+            processes = processes.split(',')
+        res = []
+        for process in psutil.process_iter():
+            try:
+                name = process.name()
+                if processes and name not in processes:
+                    continue
+                memory = process.memory_percent()
+            except psutil.NoSuchProcess:
+                continue
+            res.append({
+                    'result': 'process_memory_percent',
+                    'label': name,
+                    'float_value': memory,
+                    })
+        return res
+
+    def check_process_io_counters(self):
+        processes = self.get_attribute('processes')
+        if processes:
+            processes = processes.split(',')
+        res = []
+        for process in psutil.process_iter():
+            try:
+                name = process.name()
+                if processes and name not in processes:
+                    continue
+                counters = process.io_counters()
+            except psutil.NoSuchProcess:
+                continue
+            for name in ('read_count', 'write_count', 'read_bytes',
+                    'write_bytes'):
+                res.append({
+                        'result': 'process_io_counter_%s' % name,
+                        'label': name,
+                        'float_value': getattr(counters, name),
+                        })
+        return res

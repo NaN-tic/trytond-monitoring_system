@@ -292,5 +292,67 @@
             <field name="type">float</field>
             <field name="uom" ref="product.uom_unit"/>
         </record>
+
+        <record model="monitoring.check.type" id="check_process_cpu_percent">
+            <field name="name">Process CPU Percent</field>
+            <field name="internal_name">check_process_cpu_percent</field>
+        </record>
+        <record model="monitoring.result.type" id="result_process_cpu_percent">
+            <field name="name">Process CPU Percent</field>
+            <field name="internal_name">process_cpu_percent</field>
+            <field name="type">float</field>
+            <field name="uom" ref="monitoring.uom_percent"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_process_open_files_count">
+            <field name="name">Process Open Files Count</field>
+            <field name="internal_name">check_process_open_files_count</field>
+        </record>
+        <record model="monitoring.result.type" id="result_process_open_files_count">
+            <field name="name">Process Open Files Count</field>
+            <field name="internal_name">process_open_files_count</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_process_memory_percent">
+            <field name="name">Process Memory Percent</field>
+            <field name="internal_name">check_process_memory_percent</field>
+        </record>
+        <record model="monitoring.result.type" id="result_process_memory_percent">
+            <field name="name">Process Memory Percent</field>
+            <field name="internal_name">process_memory_percent</field>
+            <field name="type">float</field>
+            <field name="uom" ref="monitoring.uom_percent"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_process_io_counters">
+            <field name="name">Process IO Counters</field>
+            <field name="internal_name">check_process_io_counters</field>
+        </record>
+        <record model="monitoring.result.type" id="result_process_io_counter_read_count">
+            <field name="name">Process IO Read Count</field>
+            <field name="internal_name">process_io_counter_read_count</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_process_io_counter_write_count">
+            <field name="name">Process IO Write Count</field>
+            <field name="internal_name">process_io_counter_write_count</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_process_io_counter_read_bytes">
+            <field name="name">Process IO Read Bytes</field>
+            <field name="internal_name">process_io_counter_read_bytes</field>
+            <field name="type">float</field>
+            <field name="uom" ref="monitoring.uom_byte"/>
+        </record>
+        <record model="monitoring.result.type" id="result_process_io_counter_write_bytes">
+            <field name="name">Process IO Write Bytes</field>
+            <field name="internal_name">process_io_counter_write_bytes</field>
+            <field name="type">float</field>
+            <field name="uom" ref="monitoring.uom_byte"/>
+        </record>
     </data>
 </tryton>
