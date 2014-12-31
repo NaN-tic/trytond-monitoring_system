@@ -93,7 +93,7 @@ class CheckPlan:
         res = []
         for process in psutil.process_iter():
             try:
-                name = process.name()
+                label = process.name()
                 if processes and name not in processes:
                     continue
                 cpu = process.cpu_percent()
@@ -101,7 +101,7 @@ class CheckPlan:
                 continue
             res.append({
                     'result': 'process_cpu_percent',
-                    'label': name,
+                    'label': label,
                     'float_value': cpu,
                     })
         return res
@@ -113,7 +113,7 @@ class CheckPlan:
         res = []
         for process in psutil.process_iter():
             try:
-                name = process.name()
+                label = process.name()
                 if processes and name not in processes:
                     continue
                 files = process.num_fds()
@@ -121,7 +121,7 @@ class CheckPlan:
                 continue
             res.append({
                     'result': 'process_open_files_count',
-                    'label': name,
+                    'label': label,
                     'float_value': files,
                     })
         return res
@@ -133,7 +133,7 @@ class CheckPlan:
         res = []
         for process in psutil.process_iter():
             try:
-                name = process.name()
+                label = process.name()
                 if processes and name not in processes:
                     continue
                 memory = process.memory_percent()
@@ -141,7 +141,7 @@ class CheckPlan:
                 continue
             res.append({
                     'result': 'process_memory_percent',
-                    'label': name,
+                    'label': label,
                     'float_value': memory,
                     })
         return res
