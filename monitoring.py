@@ -153,7 +153,7 @@ class CheckPlan:
         res = []
         for process in psutil.process_iter():
             try:
-                name = process.name()
+                label = process.name()
                 if processes and name not in processes:
                     continue
                 counters = process.io_counters()
@@ -163,7 +163,7 @@ class CheckPlan:
                     'write_bytes'):
                 res.append({
                         'result': 'process_io_counter_%s' % name,
-                        'label': name,
+                        'label': label,
                         'float_value': getattr(counters, name),
                         })
         return res
