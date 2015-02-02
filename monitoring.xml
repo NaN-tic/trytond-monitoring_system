@@ -293,6 +293,28 @@
             <field name="uom" ref="product.uom_unit"/>
         </record>
 
+        <record model="monitoring.check.type" id="check_process_count">
+            <field name="name">Process Count</field>
+            <field name="internal_name">check_process_count</field>
+        </record>
+        <record model="monitoring.result.type" id="result_process_count">
+            <field name="name">Process Count</field>
+            <field name="internal_name">process_count</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_uptime">
+            <field name="name">Uptime</field>
+            <field name="internal_name">check_uptime</field>
+        </record>
+        <record model="monitoring.result.type" id="result_uptime">
+            <field name="name">Uptime</field>
+            <field name="internal_name">uptime</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_second"/>
+        </record>
+
         <record model="monitoring.check.type" id="check_process_cpu_percent">
             <field name="name">Process CPU Percent</field>
             <field name="internal_name">check_process_cpu_percent</field>
@@ -354,5 +376,102 @@
             <field name="type">float</field>
             <field name="uom" ref="monitoring.uom_byte"/>
         </record>
+
+        <record model="monitoring.check.type" id="check_process_open_ports">
+            <field name="name">Process Open Ports</field>
+            <field name="internal_name">check_process_open_ports</field>
+        </record>
+        <record model="monitoring.result.type" id="result_process_open_ports_status">
+            <field name="name">Process Open Ports Status</field>
+            <field name="internal_name">process_open_ports_status</field>
+            <field name="type">char</field>
+        </record>
+
+        <record model="product.uom.category" id="uom_cat_load">
+            <field name="name">Load</field>
+        </record>
+        <record model="product.uom" id="uom_load">
+            <field name="name">Load</field>
+            <field name="symbol"> </field>
+            <field name="category" ref="uom_cat_load"/>
+            <field name="factor" eval="1"/>
+            <field name="rate" eval="1"/>
+        </record>
+        <record model="monitoring.check.type" id="check_load">
+            <field name="name">Load</field>
+            <field name="internal_name">check_load</field>
+        </record>
+        <record model="monitoring.result.type" id="result_load_1">
+            <field name="name">Load 1</field>
+            <field name="internal_name">load_1</field>
+            <field name="type">float</field>
+            <field name="uom" ref="uom_load"/>
+        </record>
+        <record model="monitoring.result.type" id="result_load_5">
+            <field name="name">Load 5</field>
+            <field name="internal_name">load_5</field>
+            <field name="type">float</field>
+            <field name="uom" ref="uom_load"/>
+        </record>
+        <record model="monitoring.result.type" id="result_load_15">
+            <field name="name">Load 15</field>
+            <field name="internal_name">load_15</field>
+            <field name="type">float</field>
+            <field name="uom" ref="uom_load"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_raid">
+            <field name="name">RAID Status</field>
+            <field name="internal_name">check_raid</field>
+        </record>
+        <record model="monitoring.result.type" id="result_raid_status">
+            <field name="name">RAID Status</field>
+            <field name="internal_name">raid_status</field>
+            <field name="type">char</field>
+        </record>
+
+        <record model="monitoring.check.type" id="check_ntp_status">
+            <field name="name">NTP Status</field>
+            <field name="internal_name">check_ntp_status</field>
+        </record>
+        <record model="monitoring.result.type" id="result_ntp_status">
+            <field name="name">NTP Status</field>
+            <field name="internal_name">ntp_offset</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_second"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_apt">
+            <field name="name">APT</field>
+            <field name="internal_name">check_apt</field>
+        </record>
+        <record model="monitoring.result.type" id="result_apt_status">
+            <field name="name">APT Status</field>
+            <field name="internal_name">apt_status</field>
+            <field name="type">char</field>
+        </record>
+        <record model="monitoring.result.type" id="result_apt_upgrades">
+            <field name="name">APT Upgrades</field>
+            <field name="internal_name">apt_upgrades</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+        <record model="monitoring.result.type" id="result_apt_security_upgrades">
+            <field name="name">APT Security Upgrades</field>
+            <field name="internal_name">apt_security_upgrades</field>
+            <field name="type">float</field>
+            <field name="uom" ref="product.uom_unit"/>
+        </record>
+
+        <record model="monitoring.check.type" id="check_disk_writable">
+            <field name="name">Disk Writable</field>
+            <field name="internal_name">check_disk_writable</field>
+        </record>
+        <record model="monitoring.result.type" id="result_disk_writable">
+            <field name="name">Disk Writable</field>
+            <field name="internal_name">disk_writable</field>
+            <field name="type">char</field>
+        </record>
+
     </data>
 </tryton>
