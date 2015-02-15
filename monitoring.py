@@ -339,7 +339,9 @@ class CheckPlan:
     def check_apt(self):
         output = check_output('apt-get', '-s', 'upgrade')
         upgrades = 0
+        packages = []
         security_upgrades = 0
+        security_packages = []
         errors = False
         for line in output.splitlines():
             if not line.startswith('Inst'):
@@ -352,9 +354,12 @@ class CheckPlan:
                 errors = True
                 continue
 
+            packages.append(items[1])
+
             release = items[3]
             if 'security' in release.lower():
                 security_upgrades += 1
+                security_packages.append(items[1])
 
         res = []
         res.append({
@@ -364,10 +369,16 @@ class CheckPlan:
         res.append({
                 'result': 'apt_upgrades',
                 'float_value': upgrades,
+                'payload': json.dumps({
+                        'packages': packages,
+                        }),
                 })
         res.append({
                 'result': 'apt_security_upgrades',
                 'float_value': security_upgrades,
+                'payload': json.dumps({
+                        'packages': security_packages,
+                        }),
                 })
         return res
 
