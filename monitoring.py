@@ -364,7 +364,7 @@ class CheckPlan:
         res = []
         res.append({
                 'result': 'apt_status',
-                'char_value': 'Error' if errors else 'OK',
+                'char_value': 'Error' if error_items else 'OK',
                 'payload': json.dumps({
                         'items': error_items,
                         }),
