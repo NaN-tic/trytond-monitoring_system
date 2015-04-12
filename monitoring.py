@@ -342,7 +342,7 @@ class CheckPlan:
         packages = []
         security_upgrades = 0
         security_packages = []
-        errors = False
+        error_items = []
         for line in output.splitlines():
             if not line.startswith('Inst'):
                 continue
@@ -351,7 +351,7 @@ class CheckPlan:
 
             items = line.split()
             if len(items) != 5:
-                errors = True
+                error_items += items
                 continue
 
             packages.append(items[1])
@@ -365,6 +365,9 @@ class CheckPlan:
         res.append({
                 'result': 'apt_status',
                 'char_value': 'Error' if errors else 'OK',
+                'payload': json.dumps({
+                        'items': error_items,
+                        }),
                 })
         res.append({
                 'result': 'apt_upgrades',
