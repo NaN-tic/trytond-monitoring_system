@@ -350,13 +350,16 @@ class CheckPlan:
             upgrades += 1
 
             items = line.split()
-            if len(items) != 5:
+            if len(items) < 5:
                 error_items += items
                 continue
 
             packages.append(items[1])
 
-            release = items[3]
+            if items[3].startswith('['):
+                release = items[4]
+            else:
+                release = items[3]
             if 'security' in release.lower():
                 security_upgrades += 1
                 security_packages.append(items[1])
